@@ -4,3 +4,4 @@ I've created this repository to challenge myself to be consistent in solving DSA
 Overview of some folders-
 DAY-01 basic questions solved.
 DAY-02 to DAY-07, Arrays questions solved.
+DAY-08 to DAY-11, Binary Search questions solved.
