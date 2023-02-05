@@ -1,29 +1,27 @@
 #include <bits/stdc++.h> 
-#include <iostream>
-using namespace std;
+void sort012(int *arr, int n)
+{
 
-void sort012(int arr[], int n) {
-
-   sort(arr,arr+n);
-}
-
-int main() { 
-    int t;   
-    cin >> t;
-
-   while (t > 0) {  
-       int n;     
-       cin >> n;  
-       int arr[n];      
-       for (int i = 0; i < n; i++) {        
-           cin >> arr[i];   
-       }     
-       sort012(arr, n);   
-       for (int i = 0; i < n; i++) {     
-           cout << arr[i] << " ";  
-       }     
-       cout << endl;    
-       t--;   
-   }   
-    return 0;
+    int LOW = 0, MID = 0, HIGH = n-1;
+    
+    while(MID <= HIGH)
+    {
+        if(arr[MID] == 0)
+        {
+            arr[MID] = arr[LOW];
+            arr[LOW] = 0;
+            LOW++;
+            MID++;
+        }
+        else if (arr[MID] == 1)
+        {
+            MID++;
+        }
+        else if (arr[MID] == 2)
+        {
+            arr[MID] = arr[HIGH];
+            arr[HIGH] = 2;
+            HIGH--;
+        }
+    }
 }
