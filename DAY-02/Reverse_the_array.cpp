@@ -1,23 +1,39 @@
-#include <algorithm>
 #include <iostream>
 using namespace std;
+
+void reverse(int arr[], int n){
+
+    int s=0;
+    int e= n-1;
+
+    while(s<=e){
+
+        swap(arr[s], arr[e]);
+        s++;
+        e--;
+    }
+}
+
+void printArray(int arr[], int n){
+
+    for(int i=0; i<n; i++){
+
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
  
 int main()
 {
-    int arr[] = { 1, 45, 54, 71, 76, 12 };
- 
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[6]= {1,4,0,5,-2,15};
+    int brr[5]= {2,6,3,9,4};
 
-    cout << "Array: ";
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
- 
-    // Reverse the array
-    reverse(arr, arr + n);
- 
-    // Print the reversed array
-    cout << "\nReversed Array: ";
-    for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
+    reverse(arr,6);
+    reverse(brr,5);
+
+    printArray(arr,6);
+    printArray(brr,5);
+
+
     return 0;
 }
